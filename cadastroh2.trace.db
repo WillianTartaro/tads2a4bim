@@ -1,0 +1,35 @@
+10-15 15:45:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * CLIENTE[*] "; SQL statement:
+select * cliente [42000-187]
+10-15 15:46:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+insert into cliente (id,nome) values (1,willian) [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:648)
+	at org.h2.command.Parser.parseColumn(Parser.java:856)
+	at org.h2.command.Parser.parseColumnList(Parser.java:840)
+	at org.h2.command.Parser.parseInsert(Parser.java:1040)
+	at org.h2.command.Parser.parsePrepared(Parser.java:401)
+	at org.h2.command.Parser.parse(Parser.java:305)
+	at org.h2.command.Parser.parse(Parser.java:277)
+	at org.h2.command.Parser.prepareCommand(Parser.java:242)
+	at org.h2.engine.Session.prepareLocal(Session.java:461)
+	at org.h2.engine.Session.prepareCommand(Session.java:403)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1390)
+	at org.h2.server.web.WebApp.query(WebApp.java:1063)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1025)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1012)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+10-15 15:46:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TABLE" not found; SQL statement:
+delete table from cliente [42102-187]
+10-15 15:47:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TABLE" not found; SQL statement:
+delete from table cliente [42102-187]
