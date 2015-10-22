@@ -50,8 +50,8 @@ public class TelaPrincipal extends JFrame {
 		JMenuItem mntmCliente = new JMenuItem("Cliente");
 		mntmCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tabbedPane.addTab("Cadastro de Cliente ", new JPanel());
 				
+				tabbedPane.addTab("Cadastro de Cliente ", new JPanel());
 				
 			}
 		});
@@ -61,6 +61,7 @@ public class TelaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
+		//Transformou o tabbedPane, para conseguir acessar no evento do botao. (CTRL+1);
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 	}
