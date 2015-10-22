@@ -51,9 +51,10 @@ public class TelaPrincipal extends JFrame {
 		mntmCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				tabbedPane.addTab("Cadastro de Cliente ", new JPanel());
+				abrirTela();
 				
 			}
+
 		});
 		mnCadastro.add(mntmCliente);
 		contentPane = new JPanel();
@@ -66,4 +67,14 @@ public class TelaPrincipal extends JFrame {
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 	}
 
-}
+	private void abrirTela() {
+		TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+		telaCadastroCliente.setCloseAction(e -> tabbedPane.remove(telaCadastroCliente));
+		tabbedPane.addTab("Cadastro Cliente ", telaCadastroCliente);
+			}
+
+
+		
+	}
+
+	

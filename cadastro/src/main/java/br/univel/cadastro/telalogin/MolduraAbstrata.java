@@ -9,13 +9,22 @@ import java.awt.GridBagConstraints;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public abstract class AbstractPanel extends JPanel {
+public abstract class MolduraAbstrata extends JPanel {
+	
+	private JButton btnFechar;
+	
+	protected abstract void configuraMiolo();
+	public void setCloseAction(ActionListener action) {
+		btnFechar.addActionListener(action);
+	}
 
 	/**
 	 * Create the panel.
 	 */
-	public AbstractPanel() {
+	public MolduraAbstrata() {
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
@@ -35,7 +44,8 @@ public abstract class AbstractPanel extends JPanel {
 		gbc_lblOl.gridy = 0;
 		panel.add(lblOl, gbc_lblOl);
 		
-		JButton btnFechar = new JButton("Fechar");
+		btnFechar = new JButton("Fechar");
+		
 		GridBagConstraints gbc_btnFechar = new GridBagConstraints();
 		gbc_btnFechar.anchor = GridBagConstraints.EAST;
 		gbc_btnFechar.gridx = 1;
@@ -45,6 +55,9 @@ public abstract class AbstractPanel extends JPanel {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.LIGHT_GRAY);
 		add(panel_1, BorderLayout.SOUTH);
+		
+		configuraMiolo();
+		
 
 	}
 
